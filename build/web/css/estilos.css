@@ -1,0 +1,398 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+/* validador */
+
+
+
+body {
+    background-color: #232331;
+    font-family: 'Roboto', sans-serif;
+}
+
+#captchaBackground {
+    height: 220px;
+    width: 250px;
+    background-color: #2d3748;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#captchaHeading {
+    color: white;
+}
+
+#captcha {
+    height: 80%;
+    width: 80%;
+    font-size: 30px;
+    letter-spacing: 3px;
+    margin: auto;
+    display: block;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#submitButton {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    background-color: #08e5ff;
+    border: 0px;
+    font-weight: bold;
+}
+
+#refreshButton {
+    background-color: #08e5ff;
+    border: 0px;
+    font-weight: bold;
+}
+
+#textBox {
+    height: 25px;
+}
+
+.incorrectCaptcha {
+    color: #FF0000;
+}
+
+.correctCaptcha {
+    color: #7FFF00;
+}
+
+/*Codigo css para el login*/
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background: url(../imagenes/fondo.jpg);
+}
+#contenedor1{
+    background: #f9f7f7;
+    width: 460px;
+    height: 360px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+#form1{
+    padding: 50px 20px 10px 20px; 
+}
+
+#contenedor1 h1{
+    text-align: center;
+    padding-top: 20px;
+    color: #566573;
+    font-size: 45px;
+}
+
+#ContenedorMantenedorProveedor h1 {
+    
+    text-align: center;
+    padding-top: 20px;
+    color: #566573;
+    font-size: 45px;
+}
+
+#ContenedorMantenedorProducto h1 {
+    
+    text-align: center;
+    padding-top: 20px;
+    color: #566573;
+    font-size: 45px;
+}
+
+#form1 input[type="text"],#form1 input[type="password"]{
+    border: none;
+    background: none;
+    width: 100%;
+    height: 60px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#form1 input[type="submit"]{
+    width: 100%;
+    height: 70px;
+    background: #11a9be;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    font-size: 25px;
+    color: #1b4f72; 
+}
+#form1 input[type="submit"]:hover{
+    background: #3498db;
+}
+
+#form1 hr{
+    margin-bottom: 40px;
+    color: #aed6f1;
+}
+
+#form1 input[type="button"]{
+    width: 100%;
+    height: 70px;
+    background: #11a9be;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    font-size: 25px;
+    color: #1b4f72; 
+}
+
+#form1 input[type="button"]:hover{
+    background: #3498db;
+}
+
+
+
+#contenedor2{
+    background: #f9f7f7;
+    width: 460px;
+    height: 140px;
+    margin: auto;
+    margin-top: 10px;
+}
+#form2{
+    width: 100%;
+    padding: 23px 20px 0px 20px;
+    box-sizing: border-box;
+}
+#form2 input[type="submit"]{
+    width: 100%;
+    height: 60px;
+    background: #ffffff;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    font-size: 25px;
+    color: #1b4f72;
+}
+#form2 input[type="submit"]:hover{
+    background: #3498db;
+    color: #ffffff;
+}
+
+#referencias{
+    margin-left: 110px;
+    margin-top: 14;
+}
+#referencias a{
+    padding-left: 10px;
+    text-decoration: none;
+    color:#1b4f72;
+}
+/*---------------------------------------------------------------------------------------------*/
+
+/*Codigo css para el formulario del menu de navegacion*/
+#Menu input[type="button"]{
+    width: 100%;
+    height: 70px;
+    background: #11a9be;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    font-size: 25px;
+    color: #1b4f72; 
+}
+
+#Menu input[type="button"]:hover{
+    background: #3498db;
+}
+/*----------------------------------------------------------------------------*/
+
+/* Codigo css para el formulario Mantenedor de Producto */
+
+#ContenedorMantenedorProducto {
+    background: #f9f7f7;
+    width: 900px;
+    height: 170px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+#ContenedorMantenedorProducto input[type="submit"]{
+    width: 100%;
+    height: 70px;
+    background: #11a9be;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    font-size: 25px;
+    color: #1b4f72; 
+}
+
+#ContenedorMantenedorProducto input[type="submit"]:hover{
+    background: #3498db;
+}
+
+#MantenedorProducto1 input[type="submit"],[type="button"]{
+    width: 70%;
+    height: 70px;
+    background: #11a9be;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    font-size: 25px;
+    color: #1b4f72; 
+}
+
+#MantenedorProducto1 input[type="submit"]:hover{
+    background: #3498db;
+}
+
+#MantenedorProducto1 input[type="button"]:hover{
+    background: #3498db;
+}
+
+/*--------------------------------------------------------------------------------------------------*/
+
+/*Codigo css para tablas*/
+
+table{
+    background-color: white;
+    text-align: left;
+    width: 95%;
+    border-collapse: collapse;
+}
+
+th, td{
+    border: solid 1px black;
+    padding: 3;
+    
+}
+
+thead{
+    background-color: #246355; /*Color de cabezera*/
+    border-bottom: solid 5px #0f362D; /*Linea cabecera  inferior*/
+    color: white; /*Color de relleno de las celdas*/
+    
+}
+
+tr:nth-child(even){
+    background-color: #ddd;/*Selecciona las celdas pares */
+}
+
+tr:hover td{
+    background-color: #369681;
+    color: white;
+}
+
+/*Css Ingresar producto*/
+
+#IngresarProducto input[type="text"],#form1 input[type="password"]{
+    border: none;
+    background: none;
+    width: 100%;
+    height: 60px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#IngresarProducto input[type="submit"],[type="button"]{
+    width: 100%;
+    height: 70px;
+    background: #11a9be;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    font-size: 25px;
+    color: #1b4f72; 
+}
+#IngresarProducto input[type="submit"]:hover{
+    background: #3498db;
+}
+
+#IngresarProducto input[type="button"]:hover{
+    background: #3498db;
+}
+
+#IngresarProducto hr {
+    
+    width: 90%;
+}
+
+/*------------------------------------------------------------------------------*/
+
+/*Css mantenedor Consultar Proveedor*/
+
+#ContenedorMantenedorProveedor {
+    background: #f9f7f7;
+    width: 900px;
+    height: 170px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+#ContenedorMantenedorProveedor form input[type="submit"]{
+    width: 100%;
+    height: 70px;
+    background: #11a9be;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    font-size: 25px;
+    color: #1b4f72; 
+}
+
+#ContenedorMantenedorProveedor form input[type="submit"]:hover{
+    background: #3498db;
+}
+
+#btnAgregarProveedot input[type="submit"]{
+    width: 100%;
+    height: 70px;
+    background: #11a9be;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    font-size: 25px;
+    color: #1b4f72; 
+}
+
+#btnAgregarProveedot  input[type="submit"]:hover{
+    background: #3498db;
+}
+
+#ContenedorMantenedorProveedor input[type="button"]:hover{
+    background: #3498db;
+}
+
+/*Css Editar bodega */
+
+#IngresarProducto input[type="submit"]{
+    width: 100%;
+    height: 70px;
+    background: #11a9be;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    font-size: 25px;
+    color: #1b4f72; 
+}
+
+#IngresarProducto input[type="submit"]:hover{
+    background: #3498db;
+}
+.rrss {
+    padding: 10px;
+}
+
+.social {
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.social li {
+    display: inline-block;
+}
+
+
+

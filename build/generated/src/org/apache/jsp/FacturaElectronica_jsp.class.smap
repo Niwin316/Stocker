@@ -1,0 +1,18 @@
+SMAP
+FacturaElectronica_jsp.java
+JSP
+*S JSP
+*F
++ 0 FacturaElectronica.jsp
+FacturaElectronica.jsp
++ 1 ConexionR.jsp
+ConexionR.jsp
+*L
+1,8:55
+1#1,13:62
+14,11:76
+24,4:87
+8#0,10:90
+18,11:101
+28,4:112
+*E

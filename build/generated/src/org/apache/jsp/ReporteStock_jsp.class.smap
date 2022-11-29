@@ -1,0 +1,18 @@
+SMAP
+ReporteStock_jsp.java
+JSP
+*S JSP
+*F
++ 0 ReporteStock.jsp
+ReporteStock.jsp
++ 1 ConexionR.jsp
+ConexionR.jsp
+*L
+1,9:55
+1#1,13:63
+14,11:77
+24,4:88
+9#0,10:91
+19,11:102
+29,4:113
+*E

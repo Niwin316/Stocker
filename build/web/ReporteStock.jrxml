@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b3204d59-e8e6-4dac-b4ac-6747899805c8">
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+BOD.NOMBRE AS 'REGION_BODEGA',
+BOD.TIENDA AS LOCAL,
+BOD.DIRECCION AS 'DIRECCION_LOCAL',
+PROD.IDPRODUCTO AS 'CODIGO_PRODUCTO',
+PROD.DESCRIPCION AS 'DESCRIPCION_PRODUCTO',
+PROD.STOCK_MIN AS 'STOCK_MINIMO',
+PROD.STOCK_MAX AS 'STOCK_MÁXIMO',
+PROD.STOCK_ACTUAL AS 'STOCK_ACTUAL',
+CASE
+WHEN PROD.STOCK_ACTUAL >= PROD.STOCK_MAX THEN 'SOBRE STOCK DE PRODUCTO, RETIRAR'
+WHEN PROD.STOCK_ACTUAL <= PROD.STOCK_MIN THEN 'SE DEBE COMPLETAR STOCK'
+ELSE 'NO GESTIONAR PRODUCTOS'
+END AS 'GESTION_A_REALIZAR'
+FROM BODEGA BOD 
+LEFT JOIN PRODUCTO PROD 
+ON BOD.IDBODEGA = PROD.IDBODEGA 
+ORDER BY BOD.TIENDA, BOD.NOMBRE, PROD.STOCK_ACTUAL;]]>
+	</queryString>
+	<field name="REGION_BODEGA" class="java.lang.String"/>
+	<field name="LOCAL" class="java.lang.String"/>
+	<field name="DIRECCION_LOCAL" class="java.lang.String"/>
+	<field name="CODIGO_PRODUCTO" class="java.lang.Integer"/>
+	<field name="DESCRIPCION_PRODUCTO" class="java.lang.String"/>
+	<field name="STOCK_MINIMO" class="java.lang.Integer"/>
+	<field name="STOCK_MÁXIMO" class="java.lang.Integer"/>
+	<field name="STOCK_ACTUAL" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="GESTION_A_REALIZAR" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="164" height="126" uuid="c321bd90-9a3e-480f-9dd7-88b249fb31a1"/>
+				<imageExpression><![CDATA["coffee.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="270" y="0" width="263" height="62" uuid="dcce8ff1-67ac-44df-b658-77a372a03118"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Reporte]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="303" y="62" width="196" height="22" uuid="033c12e5-02c7-4563-8b17-e08be3a01578"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Stock]]></text>
+			</staticText>
+			<image>
+				<reportElement x="633" y="-73" width="219" height="209" uuid="ad0d3689-a31a-4059-88ad-1cd7039a3956"/>
+				<imageExpression><![CDATA["coffee_stain.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1" uuid="08de30c5-bd0b-49ef-b02e-2c2f5d1f36d6"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="89" height="15" forecolor="#736343" uuid="d5568ea0-5e1e-4251-a72e-8185c450f4c9"/>
+				<text><![CDATA[REGION_BODEGA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="89" y="0" width="89" height="15" forecolor="#736343" uuid="0eb84189-bd34-46d7-b0d6-cebe3e85d61d"/>
+				<text><![CDATA[LOCAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="178" y="0" width="89" height="15" forecolor="#736343" uuid="9fd3b854-68e5-402a-b473-209afc4fa9eb"/>
+				<text><![CDATA[DIRECCION_LOCAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="267" y="0" width="89" height="15" forecolor="#736343" uuid="7befdb78-6769-4ae6-a2ea-a2ac88865d34"/>
+				<text><![CDATA[CODIGO_PRODUCTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="356" y="0" width="89" height="15" forecolor="#736343" uuid="9a9becf6-873b-459b-a175-301868020b97"/>
+				<text><![CDATA[DESCRIPCION_PRODUCTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="445" y="0" width="89" height="15" forecolor="#736343" uuid="849b132d-52cd-487a-a307-fb9d6ecdd4cb"/>
+				<text><![CDATA[STOCK_MINIMO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="534" y="0" width="89" height="15" forecolor="#736343" uuid="78eb5f40-da39-48be-868b-5a0cb02b1af9"/>
+				<text><![CDATA[STOCK_MÁXIMO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="623" y="0" width="89" height="15" forecolor="#736343" uuid="7305faed-3de8-46b3-8bb7-b287ab7d9fd2"/>
+				<text><![CDATA[STOCK_ACTUAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="712" y="0" width="89" height="15" forecolor="#736343" uuid="c97adf4c-535b-427a-a23f-275becde83b8"/>
+				<text><![CDATA[GESTION_A_REALIZAR]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="802" height="15" uuid="4030eab8-d018-4bb4-bda9-6442034ff7e3"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="89" height="15" uuid="7f7415e5-d9c4-4184-859f-d4961707711b"/>
+					<textFieldExpression><![CDATA[$F{REGION_BODEGA}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="89" y="0" width="89" height="15" uuid="4f3175fd-f9b5-4686-8170-3a37c818f474"/>
+					<textFieldExpression><![CDATA[$F{LOCAL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="178" y="0" width="89" height="15" uuid="2c9572c8-d918-414a-9f04-04fa7cf7351d"/>
+					<textFieldExpression><![CDATA[$F{DIRECCION_LOCAL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="267" y="0" width="89" height="15" uuid="9c80936c-5474-41a1-9760-84b380200c14"/>
+					<textFieldExpression><![CDATA[$F{CODIGO_PRODUCTO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="356" y="0" width="89" height="15" uuid="0dcea853-b998-4430-aa50-ca4166529c0c"/>
+					<textFieldExpression><![CDATA[$F{DESCRIPCION_PRODUCTO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="445" y="0" width="89" height="15" uuid="fc80a776-dcde-446c-b10e-45fc075643c5"/>
+					<textFieldExpression><![CDATA[$F{STOCK_MINIMO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="534" y="0" width="89" height="15" uuid="d782df7f-8306-41d2-8ed7-50eadea6d0ba"/>
+					<textFieldExpression><![CDATA[$F{STOCK_MÁXIMO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="623" y="0" width="89" height="15" uuid="44411e09-5dca-429b-b203-e0ed3d324a06"/>
+					<textFieldExpression><![CDATA[$F{STOCK_ACTUAL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="712" y="0" width="89" height="15" uuid="e6baeb2a-ea03-46a5-b3ee-562d40345bdc"/>
+					<textFieldExpression><![CDATA[$F{GESTION_A_REALIZAR}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1" uuid="7e7b1369-bde0-444c-b305-e16ece8b5db8"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="45ee1157-f5fd-445c-ae1e-19a7305e718e"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343" uuid="0983ec1e-1485-41ef-826f-49430e1c2e77"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343" uuid="e5f89c54-1e99-4dba-94d9-6c096d3f52ab"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="a9a3f911-83bb-418e-afcd-d1dc886d27b3"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
